@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#07110f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f3f7f5" media="(prefers-color-scheme: light)" />
+    <meta name="description" content="Join the Crypto City notify list by messaging CITY to @tam2reallive on Instagram." />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <title>Crypto City Waitlist</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f3f7f5;
+        --panel: #ffffff;
+        --ink: #0a1814;
+        --muted: #4c625b;
+        --line: #b8c9c2;
+        --grid: rgba(25, 80, 64, 0.09);
+        --accent: #087f5b;
+        --accent-ink: #ffffff;
+        --soft: #dff6ec;
+        --note: #eef3f1;
+        --shadow: 0 26px 70px rgba(14, 53, 41, 0.13);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #07110f;
+          --panel: #0d1b17;
+          --ink: #ecfff8;
+          --muted: #a9beb7;
+          --line: #2b443c;
+          --grid: rgba(119, 234, 195, 0.075);
+          --accent: #65e6b4;
+          --accent-ink: #07110f;
+          --soft: #102b23;
+          --note: #0a1613;
+          --shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
+        }
+      }
+
+      * { box-sizing: border-box; }
+
+      html { min-height: 100%; }
+
+      body {
+        min-height: 100vh;
+        min-height: 100svh;
+        margin: 0;
+        color: var(--ink);
+        background-color: var(--bg);
+        background-image:
+          linear-gradient(var(--grid) 1px, transparent 1px),
+          linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+        background-size: 28px 28px;
+        font-family: "DM Sans", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      button, a { font: inherit; }
+
+      main {
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(34px, 5vw, 54px);
+        padding: max(18px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(32px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+      }
+
+      .shell {
+        width: min(100%, 980px);
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+        overflow: hidden;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .content {
+        padding: clamp(28px, 5vw, 64px);
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0 0 24px;
+        color: var(--accent);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.76rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .status::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        background: currentColor;
+        box-shadow: 0 0 0 5px var(--soft);
+      }
+
+      h1 {
+        max-width: 590px;
+        margin: 0;
+        font-size: clamp(2.45rem, 7vw, 5.5rem);
+        line-height: 0.95;
+        letter-spacing: -0.065em;
+        text-wrap: balance;
+      }
+
+      .lede {
+        max-width: 580px;
+        margin: 25px 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.1vw, 1.18rem);
+        line-height: 1.58;
+      }
+
+      .instruction {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin: 30px 0 14px;
+        color: var(--ink);
+        font-size: 0.95rem;
+        font-weight: 700;
+      }
+
+      .number {
+        display: grid;
+        flex: 0 0 auto;
+        width: 29px;
+        height: 29px;
+        place-items: center;
+        border: 1px solid var(--line);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.75rem;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+      }
+
+      .primary,
+      .copy {
+        min-height: 54px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+      }
+
+      .primary {
+        gap: 10px;
+        padding: 14px 20px;
+        color: var(--accent-ink);
+        background: var(--accent);
+      }
+
+      .primary svg { width: 18px; height: 18px; }
+
+      .copy {
+        min-width: 112px;
+        padding: 14px 16px;
+        color: var(--ink);
+        background: var(--soft);
+      }
+
+      .primary:hover,
+      .primary:focus-visible { filter: brightness(1.07); }
+
+      .copy:hover,
+      .copy:focus-visible { background: var(--note); }
+
+      .primary:active,
+      .copy:active { transform: translateY(1px); }
+
+      .primary:focus-visible,
+      .copy:focus-visible {
+        outline: 3px solid var(--ink);
+        outline-offset: 3px;
+      }
+
+      .learn-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 16px;
+        color: var(--accent);
+        font-size: 0.88rem;
+        font-weight: 700;
+        text-underline-offset: 4px;
+      }
+
+      .learn-more:hover,
+      .learn-more:focus-visible { text-decoration-thickness: 2px; }
+
+      .learn-more:focus-visible {
+        outline: 2px solid var(--ink);
+        outline-offset: 4px;
+      }
+
+      .learn-more svg { width: 15px; height: 15px; }
+
+      .fine-print {
+        margin: 18px 0 0;
+        padding: 14px 0 0;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.5;
+      }
+
+      .visual {
+        position: relative;
+        min-height: 560px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: var(--note);
+        border-left: 1px solid var(--line);
+      }
+
+      .visual::before {
+        content: "";
+        position: absolute;
+        inset: 22px;
+        border: 1px solid var(--line);
+        pointer-events: none;
+      }
+
+      .diagram {
+        width: min(86%, 390px);
+        height: auto;
+        color: var(--accent);
+        overflow: visible;
+      }
+
+      .diagram .wire {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-dasharray: 4 7;
+        opacity: 0.55;
+      }
+
+      .diagram .tower {
+        fill: var(--panel);
+        stroke: var(--line);
+        stroke-width: 2;
+      }
+
+      .diagram .window { fill: currentColor; opacity: 0.72; }
+      .diagram .ring { fill: none; stroke: currentColor; stroke-width: 3; }
+      .diagram .core { fill: currentColor; }
+      .diagram .core-mark { fill: var(--accent-ink); }
+
+      .visual-label {
+        position: absolute;
+        right: 39px;
+        bottom: 36px;
+        margin: 0;
+        color: var(--muted);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .stack-section {
+        width: min(100%, 980px);
+      }
+
+      .stack-heading {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .stack-heading::after {
+        content: "";
+        height: 1px;
+        flex: 1;
+        background: var(--line);
+      }
+
+      .stack-heading h2 {
+        margin: 0;
+        font-size: clamp(1.85rem, 4vw, 2.65rem);
+        line-height: 1;
+        letter-spacing: -0.045em;
+      }
+
+      .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .repo-card {
+        min-height: 278px;
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        box-shadow: 0 14px 36px rgba(14, 53, 41, 0.08);
+      }
+
+      .repo-card h3 {
+        margin: 0;
+        font-size: 1.3rem;
+        letter-spacing: -0.025em;
+      }
+
+      .repo-description {
+        margin: 13px 0 22px;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.55;
+      }
+
+      .repo-link {
+        min-height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        align-self: flex-start;
+        padding: 11px 15px;
+        color: var(--accent-ink);
+        background: var(--accent);
+        font-size: 0.88rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: filter 160ms ease, transform 160ms ease;
+      }
+
+      .repo-link svg { width: 16px; height: 16px; }
+
+      .repo-link:hover,
+      .repo-link:focus-visible { filter: brightness(1.07); }
+
+      .repo-link:active { transform: translateY(1px); }
+
+      .repo-link:focus-visible {
+        outline: 3px solid var(--ink);
+        outline-offset: 3px;
+      }
+
+      .repo-cta {
+        margin: auto 0 0;
+        padding-top: 22px;
+        color: var(--ink);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.74rem;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .repo-cta::before {
+        content: ">";
+        margin-right: 7px;
+        color: var(--accent);
+      }
+
+      @media (max-width: 760px) {
+        main { justify-content: flex-start; }
+        .shell { grid-template-columns: 1fr; }
+        .content { padding: 32px 24px 26px; }
+        h1 { font-size: clamp(2.7rem, 15vw, 4.6rem); }
+        .lede { margin-top: 20px; }
+        .visual {
+          min-height: 250px;
+          border-left: 0;
+          border-top: 1px solid var(--line);
+        }
+        .visual::before { inset: 14px; }
+        .diagram { width: min(72%, 300px); }
+        .visual-label { right: 27px; bottom: 24px; }
+        .stack-grid { grid-template-columns: 1fr; }
+        .repo-card { min-height: 0; }
+      }
+
+      @media (max-width: 430px) {
+        .actions { grid-template-columns: 1fr; }
+        .copy { width: 100%; min-height: 48px; }
+        .status { margin-bottom: 20px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="shell" aria-labelledby="page-title">
+        <div class="content">
+          <p class="status">Testing in progress</p>
+          <h1 id="page-title">Get notified when Crypto City opens.</h1>
+          <p class="lede">Join the list and get notified when Crypto City opens.</p>
+
+          <p class="instruction"><span class="number">01</span><span>DM the word <strong>CITY</strong> to <strong>@tam2reallive</strong></span></p>
+          <div class="actions">
+            <a class="primary" href="https://www.instagram.com/tam2reallive" target="_blank" rel="noopener noreferrer" aria-label="Open @tam2reallive on Instagram and send CITY">
+              Open Instagram
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 17 17 7h-7V5h9v9h-2V8.4l-8.6 8.6H7Z"/></svg>
+            </a>
+            <button class="copy" type="button" id="copy-city" aria-live="polite">Copy “CITY”</button>
+          </div>
+          <a class="learn-more" href="https://sagetheoperator.com" target="_blank" rel="noopener noreferrer">
+            See the Sage operator system
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 17 17 7h-7V5h9v9h-2V8.4l-8.6 8.6H7Z"/></svg>
+          </a>
+
+          <p class="fine-print"><strong>Notify list only.</strong> This is not a purchase or an investment, and joining does not promise access or returns.</p>
+        </div>
+
+        <div class="visual" aria-hidden="true">
+          <svg class="diagram" viewBox="0 0 420 420" role="img">
+            <path class="wire" d="M74 118 210 210 346 118M82 308 210 210 338 308M210 80v130"/>
+            <rect class="tower" x="36" y="70" width="78" height="96"/>
+            <rect class="tower" x="306" y="70" width="78" height="96"/>
+            <rect class="tower" x="36" y="259" width="78" height="96"/>
+            <rect class="tower" x="306" y="259" width="78" height="96"/>
+            <rect class="window" x="53" y="91" width="12" height="12"/><rect class="window" x="78" y="91" width="18" height="12"/><rect class="window" x="53" y="118" width="43" height="9"/>
+            <rect class="window" x="323" y="91" width="12" height="12"/><rect class="window" x="348" y="91" width="18" height="12"/><rect class="window" x="323" y="118" width="43" height="9"/>
+            <rect class="window" x="53" y="282" width="12" height="12"/><rect class="window" x="78" y="282" width="18" height="12"/><rect class="window" x="53" y="309" width="43" height="9"/>
+            <rect class="window" x="323" y="282" width="12" height="12"/><rect class="window" x="348" y="282" width="18" height="12"/><rect class="window" x="323" y="309" width="43" height="9"/>
+            <circle class="ring" cx="210" cy="210" r="67"/>
+            <circle class="ring" cx="210" cy="210" r="51" opacity=".4"/>
+            <circle class="core" cx="210" cy="210" r="32"/>
+            <path class="core-mark" d="M194 202h32v6h-32zm0 13h22v6h-22z"/>
+            <path class="wire" d="M188 45h44M210 45v35M188 375h44M210 340v35"/>
+          </svg>
+          <p class="visual-label">Agents · tests · board vote</p>
+        </div>
+      </section>
+
+      <section class="stack-section" aria-labelledby="stack-title">
+        <div class="stack-heading">
+          <h2 id="stack-title">The Stack</h2>
+        </div>
+        <div class="stack-grid">
+          <article class="repo-card">
+            <h3>Predator</h3>
+            <p class="repo-description">Market scanner that hunts for trade setups, scores them, and manages risk.</p>
+            <a class="repo-link" href="https://github.com/tam2real/predator" target="_blank" rel="noopener noreferrer">
+              Open repository
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 17 17 7h-7V5h9v9h-2V8.4l-8.6 8.6H7Z"/></svg>
+            </a>
+            <p class="repo-cta">Comment PREDATOR on the video to get the repo</p>
+          </article>
+
+          <article class="repo-card">
+            <h3>Gaze</h3>
+            <p class="repo-description">P&amp;L tracker that watches every open position in real time.</p>
+            <a class="repo-link" href="https://github.com/tam2real/gaze" target="_blank" rel="noopener noreferrer">
+              Open repository
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 17 17 7h-7V5h9v9h-2V8.4l-8.6 8.6H7Z"/></svg>
+            </a>
+            <p class="repo-cta">Comment GAZE on the video to get the repo</p>
+          </article>
+
+          <article class="repo-card">
+            <h3>Trading City</h3>
+            <p class="repo-description">3D visualization of the trading city — twelve trader towers rendering live positions.</p>
+            <a class="repo-link" href="https://github.com/tam2real/trading-city" target="_blank" rel="noopener noreferrer">
+              Open repository
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 17 17 7h-7V5h9v9h-2V8.4l-8.6 8.6H7Z"/></svg>
+            </a>
+            <p class="repo-cta">Comment CITY on the video to get the repo</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        var button = document.getElementById("copy-city");
+        button.addEventListener("click", function () {
+          if (!navigator.clipboard) {
+            button.textContent = "CITY";
+            return;
+          }
+          navigator.clipboard.writeText("CITY").then(function () {
+            button.textContent = "Copied: CITY";
+            window.setTimeout(function () { button.textContent = "Copy “CITY”"; }, 2200);
+          }).catch(function () {
+            button.textContent = "CITY";
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
