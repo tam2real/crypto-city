@@ -381,6 +381,14 @@
         border: 1px solid var(--line);
         box-shadow: 0 14px 36px rgba(14, 53, 41, 0.08);
       }
+      .repo-card img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: top;
+        border: 1px solid var(--line);
+        margin-bottom: 16px;
+      }
 
       .repo-card h3 {
         margin: 0;
@@ -578,6 +586,7 @@
         </div>
         <div class="stack-grid">
           <article class="repo-card">
+            <img src="images/predator-live.png" alt="Live Predator dashboard — market scanner" loading="lazy" />
             <h3>Predator</h3>
             <p class="repo-description">Market scanner that hunts for trade setups, scores them, and manages risk.</p>
             <a class="repo-link" href="https://github.com/tam2real/predator" target="_blank" rel="noopener noreferrer">
@@ -588,6 +597,7 @@
           </article>
 
           <article class="repo-card">
+            <img src="images/gaze-live.png" alt="Live Gaze dashboard — P&L tracker" loading="lazy" />
             <h3>Gaze</h3>
             <p class="repo-description">P&amp;L tracker that watches every open position in real time.</p>
             <a class="repo-link" href="https://github.com/tam2real/gaze" target="_blank" rel="noopener noreferrer">
